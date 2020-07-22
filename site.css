@@ -1,0 +1,62 @@
+﻿/* Style the body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: #f1f1f1;
+    padding: 20px;
+}
+
+/* Header Title */
+.header {
+    padding: 50px;
+    text-align: center;
+    background: #0094ff;
+    color: white;
+}
+
+/* navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+}
+
+    /* Style the navigation bar links */
+    .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        background-color: #666;
+        color: white;
+    }
+
+/* profile image */
+.profileImg {
+    background-color: #aaa;
+    width: 300px;
+    padding: 20px;
+}
+
+/* List */
+.list {
+    padding: 20px;
+    text-align: left;
+    background: #ddd;
+}
+
+.coursetitle {
+    text-align: left;
+    color: blue;
+    padding: 2px 10px;
+}
+
+.movietitle {
+    text-align: left;
+    color: blueviolet;
+    padding: 2px 10px;
+    text-decoration: none;
+}
