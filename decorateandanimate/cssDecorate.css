@@ -1,0 +1,22 @@
+img {
+			height: 300px;
+			width: auto;
+		}
+
+        .normalText {
+            font-size: 12pt;
+            font-weight: normal;
+			color:black;
+			font-style:normal;
+        }
+
+        .biggerText {
+            font-size: 14pt;
+        }
+
+        .decorated {
+            font-weight: bold;
+            font-size: 48pt;
+			color:green;
+			text-decoration:underline;
+        }
