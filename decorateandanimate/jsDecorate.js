@@ -21,9 +21,8 @@ window.onload = pageload;
 
         }
 
-		function decorateButtonClicked() {
-            document.body.style.backgroundImage = "url('123.jpg')";
-
+		function decorateButtonClicked() {            
+			document.body.className  = "body";			
 			setInterval(decoraText, 500);
 			//decoraText();
 		}
