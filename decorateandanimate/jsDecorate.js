@@ -22,14 +22,15 @@ window.onload = pageload;
         }
 
 		function decorateButtonClicked() {            
-			document.body.className  = "body";			
+			document.body.className  = "body";		
+            alert('Hello, Disney World :)');	
+			
 			setInterval(decoraText, 500);
 			//decoraText();
 		}
 
 		function decoraText() {
             textArea.className = 'biggerText';
-            alert('Hello, Disney World :)');	
             var style = window.getComputedStyle(textArea, null).getPropertyValue('font-size');
             var fontSize = parseFloat(style);
             textArea.style.fontSize = (fontSize + 2) + 'pt';            
