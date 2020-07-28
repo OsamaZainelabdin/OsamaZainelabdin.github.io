@@ -10,7 +10,50 @@
 	Please don't remove this link or change its URL; leave it as-is!
 	-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-	<script src="jsDecorate.js" type="text/javascript"></script>
+	<script src="jsDecorate.js" type="text/javascript">
+		function earliestSpace(str1, str2, str3) {
+            var result = str1;
+            var index = str1.indexOf(" ");
+            if (str2.indexOf(" ") < index) {
+                result = str2;
+                index = str2.indexOf(" ") < index
+			}
+            if (str3.indexOf(" ") < index) {
+                result = str3;
+			}
+			alert('');
+			return result;
+		}
+
+        var arrSum = [1, 2, 3, 4];
+        const sumArray = arrSum.reduce((total, item) => total + item);
+        alert("sum is:" + sumArray);
+
+        var arrMultip = [1, 2, 3, 4];
+        const multiplyArray = arrMultip.reduce((total, item) => total * item);
+		alert("multiply is:" + multiplyArray);
+
+        function reverse(str) {
+            let reversedStr = '';
+            let index = str.length - 1;
+            while (index >= 0) {
+                reversedStr += str[index];
+                index--;
+            }
+            return reversedStr;
+        }
+
+		alert(reverse("hello"));
+
+		var words = ['abcdef', 'dfdlkjfdlkj', 'kslslskkkslsls','a','abc'];		
+
+		function filterbyLength(wordsArray, len) {
+			return wordsArray.filter((item, len) => item.length > len);
+		}
+
+		alert(filterbyLength(words, 3));
+
+	</script>
     <link rel="stylesheet" href="cssDecorate.css" />	
 	
 </head>

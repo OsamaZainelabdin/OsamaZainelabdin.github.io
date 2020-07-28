@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Osama's Assignment</title>
+	
+    <!-- add mocha css, to show results -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    
+	<!-- add mocha framework code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    
+	<script>
+        mocha.setup('bdd'); // minimal setup
+    </script>
+    
+	<!-- add chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    
+	<script>
+        // chai has a lot of stuff, let's make assert global
+        let assert = chai.assert;
+    </script>
+    <script>
+
+/* runs test to see if expected argument is === to value returned by function2test argument */
+function myFunctionTest(expected, found) {
+  context("Expected: "+expected+" Found: "+found, function() {
+        it("the result is: "+found, function() {
+            assert.equal(expected, found);
+        });
+    });
+}
+
+/* 4 Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers*/
+function sum(arr) {
+    return arr.reduce((a,b)=>a+b);
+}
+
+function multiply(arr) {
+    return arr.reduce((a,b)=>a*b);
+}
+
+/* 5 Define a function reverse() that computes the reversal of a string.*/
+function reverse(str) {
+    return ((str.split("")).reverse()).join("");
+}
+
+/* 7 Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i. */function filterLongWords(arr, i) {
+    return JSON.stringify(arr.filter((str)=>str.length > i));
+}
+
+console.log("Expected sum output for arr[10,3,2]: 15\n" + myFunctionTest(sum([10,3,2]), 15));
+console.log("Expected sum output for arr[10,3,2]: 16\n" + myFunctionTest(sum([10,3,2]), 16));
+
+console.log("Expected multiply output for arr[1,2,1]: 2\n" + myFunctionTest(multiply([1,2,1]), 2));
+console.log("Expected multiply output for arr[1,2,1]: 2\n" + myFunctionTest(multiply([1,2,1]), 4));
+
+console.log("Expected reverse result for Osama: amasO\n" + myFunctionTest(reverse("Osama"), "amasO"));
+console.log("Expected reverse result for Osama: amasO\n" + myFunctionTest(reverse("Osama"), "oooo"));
+
+
+console.log("Expected word length greater than 3 inside ['aa','abcd','abcde']: ['abcd','abcde']\n" + myFunctionTest(filterLongWords(['aa','abcd','abcde'],3), JSON.stringify(['abcd','abcde'])));
+console.log("Expected word length greater than 3 inside ['aa','abcd','abcde']: ['abcd','abcde']\n" + myFunctionTest(filterLongWords(['aa','abcd','abcde'],3), JSON.stringify(['abcd','abcde','zzz'])));
+
+
+
+</script>
+</head>
+<body>
+<!-- the element with id="mocha" will contain test results -->
+<div id="mocha"></div>
+<p>Each task contains a <strong>Success</strong> and <strong>Fail</strong> test case.</p>
+<p>I also included <strong>Console</strong>.<strong>Assert</strong> for each test case.</p>
+<p>Look in the Chrome developer console to see the output. CTRL_SHIFT_J</p>
+
+<script>
+mocha.run();
+</script>
+</body>
+</html>
