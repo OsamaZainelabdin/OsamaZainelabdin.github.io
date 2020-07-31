@@ -18,14 +18,32 @@
         return this;
     }
 	
+	Array.prototype.bubbleSort = function () {
+                let inputArr = this;
+                let len = inputArr.length;
+            let swapped;
+            do {
+                swapped = false;
+                for (let i = 0; i < len; i++) {
+                    if (inputArr[i] > inputArr[i + 1]) {
+                        let tmp = inputArr[i];
+                        inputArr[i] = inputArr[i + 1];
+                        inputArr[i + 1] = tmp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped);
+            return inputArr;
+        }
+	
 	/**
      * Asserts the array result.
      */
     var arrayAssert = function() {
-        var arr = [9, 5, 6, 3, 4, 1];
-        var expected = [1, 3, 4, 5, 6, 9];
+        var arr = [11,9,7,5,3,1];
+        var expected = [1, 3, 5, 7, 9, 11];
         var found = arr.bubblesort();
-        context("Given Array: (" + arr + ") after sort should be: (" + expected + ')', function() {
+        context("Given Array: (" +arr+ ") after sort should be: (" + expected + ')', function() {
             it("the result is: " + found, function() {
                 assert.deepEqual(expected, found);
             });
