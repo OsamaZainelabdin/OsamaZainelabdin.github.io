@@ -1,48 +1,29 @@
 (function() {
-    
-     Array.prototype.bubbleSort =
-            function () {
-                let inputArr = this;
-                let len = inputArr.length;
-            let swapped;
-            do {
-                swapped = false;
-                for (let i = 0; i < len; i++) {
-                    if (inputArr[i] > inputArr[i + 1]) {
-                        let tmp = inputArr[i];
-                        inputArr[i] = inputArr[i + 1];
-                        inputArr[i + 1] = tmp;
-                        swapped = true;
-                    }
-                }
-            } while (swapped);
-            return inputArr;
-        }
+    "use strict";
     /**
      * Adds the bubble sort as a inherited function on arrays.
-     * @returns {string} filteredstring. 
-     
-    String.prototype.filter = function(word) {
-        return this.replace(word, '');
-    }*/
-	
-	 String.prototype.filter = function (str) {
-            let newStr = this;
-            for (i = 0; i < str.length; i++) {                
-                if (newStr.includes(str[i])) {
-                    newStr = newStr.replace(str[i], '');                    
+     * @returns {array} sortedArray. 
+     */
+    Array.prototype.bubblesort = function() {
+        let len = this.length;
+        for (let i = 0; i < len; i++) {
+            for (let j = 0; j < len; j++) {
+                if (this[j] > this[j + 1]) {
+                    let tmp = this[j];
+                    this[j] = this[j + 1];
+                    this[j + 1] = tmp;
                 }
             }
-            newStr= newStr.replace('  ', '');
-            return newStr;
         }
-		
-    /**
+        return this;
+    }
+	
+	/**
      * Asserts the array result.
      */
     var arrayAssert = function() {
-        var arr = [5,5,4,6,7,1];
-        var expected = [1, 4, 5, 5, 6, 7];
+        var arr = [9, 5, 6, 3, 4, 1];
+        var expected = [1, 3, 4, 5, 6, 9];
         var found = arr.bubblesort();
         context("Given Array: (" + arr + ") after sort should be: (" + expected + ')', function() {
             it("the result is: " + found, function() {
@@ -50,12 +31,21 @@
             });
         });
     };
+	
+    /**
+     * The function returns the string after removing all the banned words.
+     * @returns {string} filteredstring. 
+     */
+    String.prototype.filter = function(word) {
+        return this.replace(word, '').replace('  ', ' ');
+    }
+    
     /**
      * Asserts the string result.
      */
     var stringAssert = function() {
-        var str = "This is not good.";
-        var expected = "This is good.";
+        var str = "This is not nice house";
+        var expected = "This is nice house";
         var found = str.filter('not');
         context("Given Array: (" + str + ") after filtered should be: (" + expected + ')', function() {
             it("the result is: " + found, function() {
@@ -92,7 +82,7 @@
      */
     var studentAssert = function() {
         var me = new Student();
-        me.initialize("Osama", 32);
+        me.initialize("Osama", 33);
         var found = me.learn("Inheritance");
         var expected = 'Osama just learned Inheritance';
         context("Given Student Details: (" + me.describe() + ") after filtered should be: (" + expected + ')', function() {
@@ -107,9 +97,9 @@
      */
     var teacherAssert = function() {
         var me = new Teacher();
-        me.initialize("John",", 35);
+        me.initialize("Prof. Michael Zijlstra", 35);
         var found = me.teach("WAP");
-        var expected = 'John is now teaching WAP';
+        var expected = 'Prof. Michael Zijlstra is now teaching WAP';
         context("Given Teacher Details: (" + me.describe() + ") after filtered should be: (" + expected + ')', function() {
             it("the result is: " + found, function() {
                 assert.equal(expected, found);
