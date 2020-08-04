@@ -24,11 +24,11 @@ class SavingsAccount extends Account {
     }
 
     toString() {
-        return "Savings Account " + super.getNumber() + ": balance " + super.getBalance() + " Interest " + this._interest;
+        return "Savings Account Number: " + super.getNumber() + ", balance: $" + super.getBalance() + ", Interest " + this._interest + "%";
     }
 
     endOfMonth() {
         this.addInterest();
-        return "Added interest amount to saving account:" + this.getInterest();
+        return this.toString();
     }
 }

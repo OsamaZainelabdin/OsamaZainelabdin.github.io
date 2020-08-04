@@ -70,7 +70,7 @@ class Account {
      * @returns {string} representation of this account
      */
     toString() {
-        return "Account " + this._number + ": balance " + this._balance;
+        return "Account Number: " + this._number + ", balance $" + this._balance;
     }
 
     /**
@@ -79,6 +79,6 @@ class Account {
      * @returns {undefined}
      */
     endOfMonth() {
-        return "Account EOM is N/A"; // does nothing
+        return this.toString(); // does nothing
     }
 }

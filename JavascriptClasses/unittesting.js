@@ -63,7 +63,7 @@ describe('Bank Class', function() {
 
 describe('Bank Class', function() {
     describe('End of the Month', function () {
-        let msg = 'Account EOM is N/A.  Added interest amount to saving account:10.  Checking Account EOM.  ';
+        let msg = 'Account Number: 1000, balance $0.  Savings Account Number: 1001, balance: $1100, Interest 10%.  Checking Account Number: 1002, balance: $0, Overdraft Limit: $1000.  ';
         it(msg, function () {
         bank.getAccountByNumber(1001).deposit(1000);
         bank.getAccountByNumber(1002).withdraw(4000);
