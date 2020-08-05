@@ -1,0 +1,11 @@
+
+.circle {
+    /*display: inline-block;*/
+    position: absolute;
+}
+
+
+.controls {
+    width: 200px;    
+    margin: 10px;
+}
