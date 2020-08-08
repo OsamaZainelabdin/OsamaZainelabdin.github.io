@@ -56,5 +56,12 @@ public class Quiz {
         }
         return false;
     }
+
+    public String getCurrentQuestion() {
+        return "next quiz";
+    }
+
+    public void scoreAnswer() {
+    }
 }
 
